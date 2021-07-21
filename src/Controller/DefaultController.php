@@ -68,7 +68,7 @@ class DefaultController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entiyManager = $this->getDoctrine->getManager();
+            $entiyManager = $this->getDoctrine()->getManager();
             $entiyManager->persist($contact);
             $entiyManager->flush();
 
