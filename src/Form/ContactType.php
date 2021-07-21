@@ -16,21 +16,21 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', TextType::class, [
-                'label' => 'Prénom *'
-            ])
-            ->add('lastname', Texttype::class, [
-                'label' => 'Nom *'
-            ])
-            ->add('email',EmailType::class, [
-                'label' => 'Email *'
-            ])
-            ->add('phone', NumberType::class, [
-                'label' => 'Téléphone *', 
-            ] )
-            ->add('message', TextareaType::class, [
-                'label' => 'Message *'
-            ])
+            ->add('firstname', TextType::class, array('attr' => array
+            ('placeholder' => 'Prénom' , 'style' => 'border-radius:1rem;
+            height:2.5rem; background-color:#ebebeb; text-align:center')))
+            ->add('lastname', Texttype::class,  array('attr' => array
+            ('placeholder' => 'Nom' , 'style' => 'border-radius:1rem;
+            height:2.5rem; background-color:#ebebeb; text-align:center')))
+            ->add('email',EmailType::class, array('attr' => array
+            ('placeholder' => 'Email', 'style' => 'border-radius:1rem;
+            height:2.5rem; background-color:#ebebeb; text-align:center')))
+            ->add('phone', NumberType::class, array('attr' => array
+            ('placeholder' => 'Téléphone', 'style' => 'border-radius:1rem;
+            height:2.5rem; background-color:#ebebeb; text-align:center')))
+            ->add('message', TextareaType::class, array('attr' => array
+            ('placeholder' => 'Message:', 'style' => 'height: 20rem;
+            background-color:#ebebeb; border-radius:1rem')))
         ;
     }
 
