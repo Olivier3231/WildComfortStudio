@@ -1,0 +1,32 @@
+  <h1 class="text-center">CONTACT</h1>
+    
+    <div class="container py-5">
+        <div class=" contact row gx-5">
+            <div class="col-xl-6 col-lg-6 col-md-10 col-sm-12">{% form_theme form 'bootstrap_4_layout.html.twig' %}
+                <div class="form">
+                    {{ form_start(form) }}
+                    <div class="m-3">{{form_widget(form.firstname)}}</div>
+                    <div class="form-error">
+                        {{ form_errors(form.firstname) }}
+                    </div>
+                    <div class="m-3">{{form_widget(form.lastname)}}</div>
+                    <div class="form-error">
+                        {{ form_errors(form.lastname) }}
+                    </div>
+                    <div class="m-3">{{form_widget(form.email)}}</div>
+                    <div class="form-error">
+                        {{ form_errors(form.email) }}
+                    </div>
+                    <div class="m-3">{{form_widget(form.phone)}}</div>
+                    <div class="form-error">
+                        {{ form_errors(form.phone) }}
+                    </div>
+                    <div class="message m-3">{{form_widget(form.message)}}</div>
+                    <div class="form-error">
+                        {{ form_errors(form.message) }}
+                    </div>
+                    <div class="text-center">
+                        <button class="btn m-5 bg-white rounded text-center">{{ button_label|default('Envoyer') }}</button> {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
