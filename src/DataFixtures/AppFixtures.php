@@ -36,8 +36,8 @@ class AppFixtures extends Fixture
         for ($i=0; $i < 5; $i++){
             $coach =new Coach();
             $coach->setName($faker->firstName(1))
-            ->setDescription($faker->paragraph(2))
-            ->setAvatar($x + $i);
+            ->setDescription($faker->paragraph(2));
+        
             $manager->persist($coach);
             $coachPersist[] = $coach;
             
