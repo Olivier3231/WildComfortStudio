@@ -30,6 +30,8 @@ class AppFixtures extends Fixture
         ->setPhone('06-54-65-89-13')
         ->setLegalMention('')
         ->setTimetable('6h - 22h 7j/7');
+
+        $manager->persist($about);
         // Coach
         $x=0;
         $coachPersist = [];
