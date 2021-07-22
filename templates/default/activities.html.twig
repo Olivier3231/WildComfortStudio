@@ -5,13 +5,50 @@
 {% block body %}
 
 
-<div class="container">
-    <h1>Activités</h1>
-
-    {{dump(activités)}}
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/joshmfr/workspace/WildComfortStudio/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/joshmfr/workspace/WildComfortStudio/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
-</div>
+<div class="container-fluid px-0 pt-5" id="body">
+		<h1 class="text-center">Activités</h1>
+		<div class="separation"><hr></div>
+		<main class="container-fluid mt-5">
+			<br>
+			<div class="row" id="activities_cards">
+				{% for activity in activités %}
+					<div class="col-lg-4 col-md-6 col-s-12 p-5" id="movies_card">
+						<div class="card" id="border_card">
+							<img src="" class="card-img-top img-fluid p-2" alt="..." id="image">
+							<div class="card-body text-center">
+								<p class="card-title text-center" style="font-size: 1.5rem">
+									<strong>{{ activity.name }}</strong>
+								</p>
+								<p class="card-text">
+									<small>Jour :
+										{{ activity.timetable }}
+										min</small>
+								</p>
+								<p class="card-text">Tarif :
+									{{ activity.rate }}
+									€</p>
+								<div class="container-fluid">
+									<div class="row">
+										{% if session.user is defined %}
+											<div class="col-xs-12 col-sm-12 col-lg-6 col-xl-6 my-3">
+												<a class="btn btn-dark m-5" href="/login">Réserver</a>
+											</div>
+										{% endif %}
+										{% if session.user is not defined %}
+											<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-6 my-3">
+												<a class="btn btn-dark m-5" href="/login">Réserver</a>
+											</div>
+										{% endif %}
+										<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-6 my-3">
+											<a class="btn btn-dark m-5" href="/activité/{{ activity.slug }}">+ d'infos</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</main>
+	</div>
 {% endblock %}

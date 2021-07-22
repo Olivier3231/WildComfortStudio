@@ -58,8 +58,9 @@ class DefaultController extends AbstractController
      */
     public function ShowActivity(Activity $activity): Response
     {
+        $coach = $activity->getCoaches();
         return $this->render('default/show_activity.html.twig', [
-            'activité' => $activity,
+            'activité' => $activity,'coach' => $coach
         ]);
     }
 

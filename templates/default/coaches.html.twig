@@ -4,13 +4,35 @@
 
 {% block body %}
 
-<div class="container mt-5">
-    <h1 class="pagetitle mt-5">Coach</h1>
-
-   
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/joshmfr/workspace/WildComfortStudio/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/joshmfr/workspace/WildComfortStudio/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
-</div>
+<div class="container-fluid px-0 pt-5" id="body">
+		<h1 class="text-center ">Coachs</h1>
+		<div class="separation"><hr></div>
+		<main class="container-fluid mt-5">
+			<br>
+			<div class="row" id="activities_cards">
+				{% for coach in coaches %}
+					<div class="col-lg-4 col-md-6 col-s-12 p-5" id="movies_card">
+						<div class="card" id="border_card">
+							<img src="" class="card-img-top img-fluid p-2" alt="..." id="image">
+							<div class="card-body text-center">
+								<p class="card-title text-center" style="font-size: 1.5rem">
+									<strong>{{ coach.name }}</strong>
+								</p>
+								<p class="card-text">
+									<small>
+										{{ coach.description }}
+										min</small>
+								</p>
+								<p class="card-text">
+									{{ coach.avatar }}
+									</p>
+								<div class="container-fluid">
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</main>
+	</div>
 {% endblock %}

@@ -8,10 +8,31 @@
 <div class="container">
     <h1>Activité</h1>
 
-    {{dump(activité)}}
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/joshmfr/workspace/WildComfortStudio/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/joshmfr/workspace/WildComfortStudio/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
+    <div class="container-fluid pt-5" >
+		<main class="container-fluid mt-5">
+			<div class="row justify-content-center">
+				<h1 class="text-center text-white mt-1">{{ activité.name }}</h1>
+				<div class="separation"><hr></div>
+				<div class="text-center  col-lg-11 col-md-11 col-sm-11 my-5 pb-5" id="border_card">
+					<img src="{{ activité.illustration }}" class="img-fluid mt-2 mb-3"  alt="...">
+					<h1 class="my-5 text-center">{{ activité.description }}</h1>
+					<h3 class="text-center mt-4">Prix :
+						{{ activité.rate }}
+						€</h3>
+					<h3 class="text-center mt-4"></h3>
+					<h3 class="text-center mt-4">Jour :
+						{{ activité.timetable }}
+						€</h3>
+					{% if session.user is defined %}
+						<a class="btn btn-dark m-5" href="/login">Réserver</a>
+					{% endif %}
+					{% if session.user is not defined %}
+						<a class="btn btn-dark m-5" href="/login">Réserver</a>
+					{% endif %}
+					<a class="btn btn-dark m-5" href="/activités">Retour</a>
+				</div>
+			</div>
+		</main>
+	</div>
 </div>
 {% endblock %}

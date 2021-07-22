@@ -1,3 +1,7 @@
 body {
     background-color: lightgray;
 }
+.logoNav {
+    width: 1px!important;
+    height: 1px!important;
+}
