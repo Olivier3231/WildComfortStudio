@@ -3,15 +3,27 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="container">
-    <h1>Accueil</h1>
+<div class="container mt-5 pt-5">
+
+
+    <div class="about container-fluid">
+			<h2>{{about.title}}</h2>
+			<p><h6>{{about.subtitle}}</h6></p>
+			<div class="row container-fluid mt-3">
+				<div class="col-4">
+					<img src="https://zupimages.net/up/21/29/sgii.jpg" class="img-fluid mx-2" alt="...">
+				</div>
+				<div class="col-4">
+					<img src="https://zupimages.net/up/21/29/dc7c.jpg" class="img-fluid mx-2" alt="...">
+				</div>
+				<div class="col-4">
+					<img src="https://zupimages.net/up/21/29/my0w.jpg" class="img-fluid mx-2" alt="...">
+				</div>
+			</div>
+		</div>
     <ul>
-        <li>Your controller at <code><a href="{{ '/home/joshmfr/workspace/WildComfortStudio/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
+        <li>Votre Salle est ouverte de {{about.timetable}}</li>
         <li>Your template at <code><a href="{{ '/home/joshmfr/workspace/WildComfortStudio/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
     </ul>
 </div>

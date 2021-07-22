@@ -3,10 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Activity;
+use App\Entity\Coach;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\AboutRepository;
 use App\Repository\ActivityRepository;
+use App\Repository\CoachRepository;
 use App\Repository\ContactRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,10 +24,13 @@ class DefaultController extends AbstractController
     public function __construct(
         AboutRepository $aboutRepository,
         ActivityRepository $activityRepository,
+        CoachRepository $coachRepository,
         ContactRepository $contactRepository) 
     {
         $this->aboutRepository = $aboutRepository;
         $this->activityRepository = $activityRepository;
+        $this->coachRepository = $coachRepository;
+        $this->contactRepository = $contactRepository;
     }
 
     /**
@@ -55,6 +60,26 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/show_activity.html.twig', [
             'activité' => $activity,
+        ]);
+    }
+
+    /**
+     * @Route("/coaches", name="coaches")
+     */    
+    public function Coaches(): Response
+    {
+        return $this->render('default/coaches.html.twig', [
+            'coaches' => $this->coachRepository->findAll()
+        ]);
+    }
+
+    /**
+     * @Route("/coach/{id}", name="show_coach")
+     */    
+    public function ShowCoach(Coach $coach): Response
+    {
+        return $this->render('default/show_coach.html.twig', [
+            'coach' => $coach
         ]);
     }
 

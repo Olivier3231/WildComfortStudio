@@ -1,33 +1,45 @@
 {% block header %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-  <img class="logoNav rounded-circle" src="{{ asset( 'build/logo1.png') }}" alt=" ">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="/"><img class="logoNav rounded-circle" src="{{ asset( 'build/logo1.png') }}" alt=" "></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Accueil</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+        
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Link
+          <a class="nav-link dropdown-toggle" href="/activités" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Activités
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="/activités">Activités</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="/activité/musculation">Musculation</a></li>
+            <li><a class="dropdown-item" href="/activité/pilates">Pilates</a></li>
+            <li><a class="dropdown-item" href="/activité/nutrition">Nutrtion</a></li>
+            <li><a class="dropdown-item" href="/activité/massage">Massage</a></li>
+            <li><a class="dropdown-item" href="/activité/zumba">Zumba</a></li>
+            <li><a class="dropdown-item" href="/activité/yoga">Yoga</a></li>
+            <li><a class="dropdown-item" href="/activité/shiatsu">Shiatsu</a></li>
+            <li><a class="dropdown-item" href="/activité/sophrologie">Sophrologie</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="/coaches">Coach</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Enregistrement</a>
+        </li>  
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
